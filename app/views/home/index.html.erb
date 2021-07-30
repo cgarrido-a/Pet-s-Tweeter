@@ -1,0 +1,27 @@
+<div class="row ">
+    <% if user_signed_in?%>
+        <%= render 'tweets/form', tweet: @tweet %>
+    <%end%>
+
+    <% @tweets.each do |tweet| %>
+        <%= render 'tweets/single_tweet', tweet: tweet %>
+    <% end %>
+    <hr>
+   
+      
+   
+
+</div>
+
+<div class=" my-4">
+    <div class="float-left">
+        <%= link_to :back do %>
+        <i class="fas fa-angle-double-left"></i>
+        Previous
+        <% end %>
+    </div>
+    <div class="float-right">
+        <%= link_to_next_page @tweets, 'Next Page'%>
+        <i class="fas fa-angle-double-right"></i>
+    </div>
+</div>

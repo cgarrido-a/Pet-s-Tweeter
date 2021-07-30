@@ -1,0 +1,22 @@
+<div class="col-12 border border-info p-3 mt-2 bg-light corners">
+    <div>
+        <%= link_to "<i class='fas fa-clock icon-color'></i>".html_safe + " #{time_ago_in_words(tweet.created_at)}" , tweet, class: "icon-color"  %>
+    </div>
+    <%= image_tag (tweet.user.avatar), :class => "avatar-in-tweet rounded"%>
+    <%= tweet.content %>
+    <div class="">
+        <%= link_to "<i class = 'fas fa-paw text-#{tweet.like_icon(current_user)}'></i>".html_safe, tweet_likes_path(tweet), method: :post %>
+
+        <%= tweet.likes.count %> 
+    </div>
+
+    <div class="float-right">
+        <%= tweet.count_rt %>
+        
+        <%= link_to "<i class='fas fa-retweet #{tweet.retweet_color}'></i>".html_safe, tweet_retweet_path(tweet), method: :post %>
+       
+        <% if tweet.is_retweet? %>
+            <%= link_to 'Retweet...', tweet.tweet_ref, class: 'icon-color' %>
+        <% end %>
+    </div>
+</div>
