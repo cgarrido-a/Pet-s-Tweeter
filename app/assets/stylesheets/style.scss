@@ -1,6 +1,15 @@
-.font-body-style{
+html, body {
+    height: 100%;
+  }
+body {
+    display: flex;
+    flex-direction: column;
+  }
+
+.content-style{
     font-family: 'Indie Flower', 'sans serif';
     font-size: 1.5em;
+    flex: 1 0 auto;
 }
 
 .font-alert{
@@ -9,6 +18,7 @@
 
 .avatar-in-tweet{
     width: 100px;
+    height: 95px;
 }
 
 .nav-style{
@@ -19,7 +29,9 @@
 .footer-style{
    background-color:purple;
     font-family: 'Indie Flower', 'sans serif';
+    flex-shrink: 0;
     position: relative;
+    
   
 
 }
@@ -27,9 +39,10 @@
     // background-image: url("https://media.istockphoto.com/vectors/cute-animal-faces-seamless-pattern-hand-drawn-doodle-cartoon-animals-vector-id1194379395");
    background-image: url("bg.jpg");
    position: relative;
-   
+ 
   
 }
+
 
 .background-image:before {
 	content:'';
@@ -38,13 +51,15 @@
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background-color: hsla(0, 100%, 90%, 0.3);;
-   
-}
-.bg-div-color{
-    background-color: #f3a7f3   
-}
+    background-repeat: repeat-y;
+	background-color: hsla(0, 100%, 90%, 0.3);
+    background-repeat: repeat;
 
+}
+.bg-div-content{
+    background-color: #f3a7f3;
+    position: relative;
+}
 .bg-nav-color{
     background-color: darkmagenta;
 }
@@ -65,4 +80,10 @@
 .links-color{
     color:darkorchid;
     font-weight: bold;
+}
+
+.avatar-show{
+    border-radius: 5px 30px 5px;
+    width: 50px;
+    height: 50px;
 }

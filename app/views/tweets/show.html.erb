@@ -3,14 +3,16 @@
   <p id="notice"><%= notice %></p>
 
   <p>
-    <strong> <%= @tweet.user.username %> dice:</strong>
+    <h3><strong> <%= @tweet.user.username %> dice:</strong></h3>
     <%= @tweet.content %>
   </p>
 
-  <h3>Likes (<%= @tweet.likes.count %>)</h3>
+  <h3><i class="fas fa-paw text-danger"></i> Likes (<%= @tweet.likes.count %>)</h3>
+  
   <% @tweet.liking_users.each do |user| %>
-    <%= image_tag(user.avatar, class: 'avatar-in-tweet rounded') %>
+    <%= image_tag(user.avatar, class: 'avatar-in-tweet avatar-show') %>
   <% end %>
+  <br>
   <%= link_to 'Back', root_path %>
 
 </div>
