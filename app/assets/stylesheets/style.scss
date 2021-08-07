@@ -43,7 +43,6 @@ body {
 
 .clock-style{
     font-size: 0.8em;
-    font-family: 'Indie Flower', 'sans serif';
 }
 
 .font-alert{
@@ -55,23 +54,28 @@ body {
      flex-shrink: 0;
      position: relative;
  }
- 
+
  .links-color{
     font-weight: bold;
 }
 
-
-.nav-style{
+.nav-style, .clock-style, .user-says, .form-style{
     font-family: 'Indie Flower', 'sans serif';
+}
+.nav-style{
     font-size: 2em;
  }
+
 
 .single-tweet{
     border-radius: 25px;
 }
 
+.text-info{
+    font-size: 0.8em ;
+}
+
 .user-says{
-    font-family: 'Indie Flower', 'sans serif';
     font-weight: 700;
 }
 

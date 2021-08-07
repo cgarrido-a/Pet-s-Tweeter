@@ -4,31 +4,52 @@
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="form-group">
-      <%= f.label :username %>
-      <%= f.text_field :username, autofocus: true, autocomplete: "email", :class => "form-control" %>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+        </div>
+        <%= f.text_field :username, autofocus: true, autocomplete: "email", :class => "form-control", :placeholder =>"User Name" %>
+      </div>  
     </div>
 
     <div class="form-group">
-      <%= f.label :avatar %>
-      <%= f.text_field :avatar, autofocus: true, autocomplete: "email", :class => "form-control" %>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1"><i class="fas fa-image"></i></span>
+        </div>
+        <%= f.text_field :avatar, autofocus: true, autocomplete: "email", :class => "form-control", :placeholder=> "Avatar (image URL)" %>
+      </div>  
     </div>
 
     <div class="form-group">
-      <%= f.label :email %>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "form-control" %>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1"><i class="far fa-envelope"></i></span>
+        </div>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "form-control", :placeholder => "Email" %>
+      </div>  
     </div>
 
     <div class="form-group">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %>
-      <%= f.password_field :password, autocomplete: "new-password", :class => "form-control" %>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
+        </div>
+        <% if @minimum_password_length %>
+          <%= f.password_field :password, autocomplete: "new-password", :class => "form-control", :placeholder => "Password (#{@minimum_password_length} characters minimum)"  %>
+        <%else%>
+          <%= f.password_field :password, autocomplete: "new-password", :class => "form-control", :placeholder => "Password"  %>
+        <% end %>
+      </div>  
     </div>
 
     <div class="form-group">
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", :class => "form-control" %>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
+        </div>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", :class => "form-control", :placeholder => "Password Confirmation" %>
+      </div> 
     </div>
 
     <div class="actions ">
