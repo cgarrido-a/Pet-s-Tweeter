@@ -57,6 +57,7 @@ body {
      position: relative;
  }
 
+
  .links-color{
     font-weight: bold;
 }
@@ -71,17 +72,22 @@ body {
 
 .modal-btn{
     margin-left: 25rem;
+
 }
 
-.nav-style, .clock-style, .user-says, .form-style{
+.nav-style, .clock-style, .user-says, .form-style, .tweets-list{
     font-family: 'Indie Flower', 'sans serif';
 }
 .nav-style{
     font-size: 2em;
  }
 
+ .search-bar{
+     width: 50%;
+     display: inline;
+ }
 
-.single-tweet{
+.single-tweet, .modal-btn{
     border-radius: 25px;
     
 }
@@ -89,6 +95,7 @@ body {
 .text-info{
     font-size: 0.8em ;
 }
+
 
 .user-says{
     font-weight: 700;

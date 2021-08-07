@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Tweets</h1>
+<h1 class="tweets-list text-center mt-4"><strong>Tweets</strong></h1>
 
-<table>
-  <thead>
+<table class="table table-bordered mt-4">
+  <thead class="thead-dark">
     <tr>
       <th>Content</th>
       <th>User</th>
@@ -11,7 +11,7 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody class="bg-light">
     <% @tweets.each do |tweet| %>
       <tr>
         <td><%= tweet.content %></td>

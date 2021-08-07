@@ -29,7 +29,7 @@
     <%= render "shared/navbar"  %>
     
     <% if alert || notice %>
-      <div class="alert alert-<%= alert ? 'danger': 'success' %> text-center py-4 text-<%= alert ? 'danger': 'success' %> font-alert " role="alert">
+      <div class="alert alert-<%= alert ? 'danger': 'success' %> text-center py-3 mt-3 text-<%= alert ? 'danger': 'success' %> font-alert " role="alert">
         <%= alert %>
         <%= notice %>
       </div>
