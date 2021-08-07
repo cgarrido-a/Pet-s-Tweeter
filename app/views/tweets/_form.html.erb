@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="form-group">
-    <strong><%= current_user.username %> dice:</strong><br>
+    <strong >Tell us about yourself (barking, meowing or others is also accepted)</strong><br>
     
     <%= form.text_area :content, :class => "form-control" %>
   </div>
 
   <div class="actions float-right">
-    <%= form.submit "Twittear", :class => "btn p-2 " %>
+    <%= form.submit "Twittear", :class => "btn btn-info p-2 " %>
   </div>
 <% end %>

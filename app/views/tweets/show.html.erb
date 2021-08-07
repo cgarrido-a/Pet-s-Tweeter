@@ -4,7 +4,7 @@
 
   <p>
     <h3><strong> <%= @tweet.user.username %> dice:</strong></h3>
-    <%= @tweet.content %>
+    <%= @tweet.content.html_safe %>
   </p>
 
   <h3><i class="fas fa-paw text-danger"></i> Likes (<%= @tweet.likes.count %>)</h3>

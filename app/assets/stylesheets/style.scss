@@ -1,85 +1,6 @@
-html, body {
-    height: 100%;
-  }
-body {
-    display: flex;
-    flex-direction: column;
-  }
-
-.content-style{
-    font-family: 'Indie Flower', 'sans serif';
-    font-size: 1.5em;
-    flex: 1 0 auto;
-}
-
-.font-alert{
-    font-size: 1.5em;
-}
-
 .avatar-in-tweet{
     width: 100px;
     height: 95px;
-}
-
-.nav-style{
-    font-family: 'Indie Flower', 'sans serif';
-    font-size: 2em;
- }
-
-.footer-style{
-   background-color:purple;
-    font-family: 'Indie Flower', 'sans serif';
-    flex-shrink: 0;
-    position: relative;
-    
-  
-
-}
- .background-image{
-    // background-image: url("https://media.istockphoto.com/vectors/cute-animal-faces-seamless-pattern-hand-drawn-doodle-cartoon-animals-vector-id1194379395");
-   background-image: url("bg.jpg");
-   position: relative;
- 
-  
-}
-
-
-.background-image:before {
-	content:'';
-	position: absolute;
-        top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-    background-repeat: repeat-y;
-	background-color: hsla(0, 100%, 90%, 0.3);
-    background-repeat: repeat;
-
-}
-.bg-div-content{
-    background-color: #f3a7f3;
-    position: relative;
-}
-.bg-nav-color{
-    background-color: darkmagenta;
-}
-
-.corners{
-    border-radius: 25px;
-}
-
-.icon-color {
-    color: darkmagenta;
-}
-.btn{
-    background-color: darkmagenta !important;
-    color: white !important;
-    font-size: 1.1em !important;
-}
-
-.links-color{
-    color:darkorchid;
-    font-weight: bold;
 }
 
 .avatar-show{
@@ -87,3 +8,80 @@ body {
     width: 50px;
     height: 50px;
 }
+
+html, body {
+    height: 100%;
+  }
+
+body {
+    display: flex;
+    flex-direction: column;
+  }
+
+.background-image{
+    background-image: url('https://media.istockphoto.com/vectors/trace-brown-doodle-paw-prints-seamless-pattern-background-vector-id1169439839?k=6&m=1169439839&s=612x612&w=0&h=SMujWR1UVYx3zKD7pk3JDgqOaCQyCslTcZc6PkT9MM4=');
+    position: relative;
+}
+
+.bg-div-content{
+    background-color: #FFEBC9;
+    position: relative;
+}
+.bg-nav-color{
+    background-color: #DA723C;
+}
+
+.content-style{
+    font-family: 'Alegreya', serif;
+    font-size: 1.5em;
+    flex: 1 0 auto;
+}
+
+.content{
+    text-align: justify;
+}
+
+.clock-style{
+    font-size: 0.8em;
+    font-family: 'Indie Flower', 'sans serif';
+}
+
+.font-alert{
+    font-size: 1.5em;
+}
+
+.footer-style{
+    background-color:#DA723C;
+     flex-shrink: 0;
+     position: relative;
+ }
+ 
+ .links-color{
+    font-weight: bold;
+}
+
+
+.nav-style{
+    font-family: 'Indie Flower', 'sans serif';
+    font-size: 2em;
+ }
+
+.single-tweet{
+    border-radius: 25px;
+}
+
+.user-says{
+    font-family: 'Indie Flower', 'sans serif';
+    font-weight: 700;
+}
+
+
+
+
+
+
+
+
+
+
+

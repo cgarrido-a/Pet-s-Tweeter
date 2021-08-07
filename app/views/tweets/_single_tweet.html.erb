@@ -1,22 +1,53 @@
-<div class="col-12 border border-info p-3 mt-2 bg-light corners">
+<div class="col-12  p-3 mt-2 bg-light single-tweet shadow-sm">
+
     <div>
-        <%= link_to "<i class='fas fa-clock icon-color'></i>".html_safe + " #{time_ago_in_words(tweet.created_at)}" , tweet, class: "icon-color"  %>
-    </div>
-    <%= image_tag (tweet.user.avatar), :class => "avatar-in-tweet rounded"%>
-    <%= tweet.content %>
-    <div class="">
-        <%= link_to "<i class = 'fas fa-paw text-#{tweet.like_icon(current_user)}'></i>".html_safe, tweet_likes_path(tweet), method: :post %>
-
-        <%= tweet.likes.count %> 
+        <%= link_to "<i class='fas fa-clock icon-color'></i>".html_safe + " #{time_ago_in_words(tweet.created_at)}" , tweet, class: "clock-style"  %>
     </div>
 
-    <div class="float-right">
-        <%= tweet.count_rt %>
-        
-        <%= link_to "<i class='fas fa-retweet #{tweet.retweet_color}'></i>".html_safe, tweet_retweet_path(tweet), method: :post %>
-       
-        <% if tweet.is_retweet? %>
-            <%= link_to 'Retweet...', tweet.tweet_ref, class: 'icon-color' %>
+    <div class="row ml-2">
+   
+            <%= image_tag (tweet.user.avatar), :class => "avatar-in-tweet rounded"%>
+
+           <div class = "col-8" >
+            <h5><strong class="user-says"><%= tweet.user.username %> dice:</strong><p class="content"><%= tweet.content.html_safe %> </p></h5>
+            
+           </div>
+ 
+    </div>
+   
+    <div class="container">
+
+        <% if user_signed_in? && current_user != tweet.user%>
+        <div class="float-right">
+            <% if current_user.is_following?(tweet.user_id) %>
+                <%= link_to '<i class="fas fa-user-times text-danger"></i>'.html_safe, users_follow_path(tweet.user_id), method: :post %>
+            <% else %>
+                <%= link_to "<i class = 'fa fa-user-plus' aria-hidden = 'true'></i>".html_safe, users_follow_path(tweet.user_id), method: :post %>
+            <% end %>
+        </div>
         <% end %>
-    </div>
+        
+        <div class="float-right mr-4">
+            <%= link_to "<i class = 'fas fa-paw text-#{tweet.like_icon(current_user)}'></i>".html_safe, tweet_likes_path(tweet), method: :post %>
+            <%= tweet.likes.count %> 
+        </div>
+    
+        <div class="float-right mr-4">
+            <% if user_signed_in? && current_user != tweet.user%>
+                <%= link_to "<i class='fas fa-retweet #{tweet.retweet_color}'></i>".html_safe, tweet_retweet_path(tweet), method: :post %>
+                <%= tweet.count_rt %>
+            <% else %>
+                <%= link_to "<i class='fas fa-retweet #{tweet.retweet_color}'></i>".html_safe %>
+                <%= tweet.count_rt %>
+            <% end %>
+        </div>
+    
+        <div class="float-right ">
+            <% if tweet.is_retweet? && !tweet.retweet_exist?.empty?  %>
+                 <%= link_to 'Retweet...', tweet.tweet_ref, class: 'icon-color' %>
+            <% end %>
+           
+        </div>
+
+    </div>  
 </div>

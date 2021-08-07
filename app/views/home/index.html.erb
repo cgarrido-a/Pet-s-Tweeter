@@ -3,29 +3,25 @@
         <%= render 'tweets/form', tweet: @tweet %>
     <%end%>
 
+    <div class="w-100 mt-2">
+        <%= form_tag(root_path, method: :get) do %>
+            <div class="form-group">
+                <%= link_to "Clean", root_path, :class => "btn btn-info float-right ml-2" %>
+                <%= submit_tag("Search", :class => "ml-2 btn btn-info float-right") %>
+                <%= text_field_tag(:search, params[:search], :class => "w-50 float-right form-control d-inline") %>
+            </div>
+        <% end %>
+    </div>
+
     <% @tweets.each do |tweet| %>
         <%= render 'tweets/single_tweet', tweet: tweet %>
     <% end %>
     <hr>
-   
-      
-   
-
+ 
 </div>
 
 <div class=" my-4">
-    <div class="float-left">
-        <%= link_to :back do %>
-        <i class="fas fa-angle-double-left"></i>
-        Previous
-        <% end %>
+    <div class="d-flex justify-content-center">
+        <%= paginate @tweets %>
     </div>
-    <div class="float-right">
-        <%= link_to_next_page @tweets, '<i class="fas fa-angle-double-right"></i>Next'.html_safe %>
-        
-    </div>
-    <!-- <div class="float-right">
-        <%= link_to_next_page @tweets, 'Next Page'%>
-        <i class="fas fa-angle-double-right"></i>
-    </div> -->
 </div>
