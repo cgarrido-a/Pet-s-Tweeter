@@ -4,10 +4,13 @@
 
   <div class="container bg-light single-tweet tweet-show mb-3">
     <div class="row mb-5  ">
-      <%= image_tag(@tweet.user.avatar, class: 'img-thumbnail avatar-show m-3 ') %>
-      <div class="mt-3">
+      <div>
+        <%= image_tag(@tweet.user.avatar, class: 'img-thumbnail avatar-in-tweet m-3 ') %>
+      </div>
+      
+      <div class="mt-3 col-sm-8">
         <h3 class="d-inline "><strong> <%= @tweet.user.username %> dice:</strong></h3>
-        <p class="p-show"><em>"<%= @tweet.content.html_safe %>"</em></p>
+        <p class="p-show content"><em>"<%= @tweet.content.html_safe %>"</em></p>
       </div>
       
     </div>
