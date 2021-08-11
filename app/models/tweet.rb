@@ -5,6 +5,7 @@ class Tweet < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :liking_users, :through => :likes, :source => :user
 
+
   validates :content, :presence => true
 
   paginates_per 5
@@ -40,6 +41,7 @@ class Tweet < ApplicationRecord
   def is_liked?(user)
     self.liking_users.include?(user)
   end
+
 
   def like(user)
     Like.create(user: user, tweet: self)

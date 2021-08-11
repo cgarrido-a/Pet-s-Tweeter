@@ -14,6 +14,13 @@
            </div>
  
     </div>
+
+    <div class="float-left retweet mt-3">
+        <% if tweet.is_retweet? && !tweet.retweet_exist?.empty?  %>
+             <%= link_to '(This is a retweet)', tweet.tweet_ref %>
+        <% end %>
+       
+    </div>
    
     <div class="container">
 
@@ -42,12 +49,7 @@
             <% end %>
         </div>
     
-        <div class="float-right ">
-            <% if tweet.is_retweet? && !tweet.retweet_exist?.empty?  %>
-                 <%= link_to 'Retweet...', tweet.tweet_ref, class: 'icon-color' %>
-            <% end %>
-           
-        </div>
+    
 
     </div>  
 </div>

@@ -57,6 +57,13 @@ body {
      position: relative;
  }
 
+ header{
+    background-color:#DA723C;
+ }
+
+.img-header{
+    width: 20rem;
+}
 
  .links-color{
     font-weight: bold;
@@ -75,12 +82,19 @@ body {
 
 }
 
-.nav-style, .clock-style, .user-says, .form-style, .tweets-list{
+.nav-style, .clock-style, .user-says, .form-style, .tweets-list, .retweet{
     font-family: 'Indie Flower', 'sans serif';
 }
 .nav-style{
     font-size: 2em;
- }
+
+}
+
+.retweet{
+    font-size: 0.7em;
+   
+
+}
 
  .search-bar{
      width: 50%;
@@ -96,6 +110,9 @@ body {
     font-size: 0.8em ;
 }
 
+.tweet-show {
+    margin-top: 7rem;
+}
 
 .user-says{
     font-weight: 700;
