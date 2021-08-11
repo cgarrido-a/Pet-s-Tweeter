@@ -10,14 +10,25 @@
       </ul>
     </div>
   <% end %>
+  <div class="container text-center">
+    <div class=" form-group my-5">
+      <h3 class="new-tweet-title d-inline"><strong>Hello! How is your animalistic day going?</strong></h3>
+      <%= image_tag 'friends_2.png', class: "img-inicio" %>
 
-  <div class="form-group my-5">
-    <strong >Hello! How is your animalistic day going?</strong><br>
+     
+        <div class="col-8 text-center py-4 m-auto">
+          <%= form.text_area :content, :class => "form-control", :placeholder => "Write here your thoughts and comments..." %>
+        </div>
+        
+  
+        <div class="actions d-inline ">
+          <%= form.submit "Write a Message!!", :class => "btn btn-info btn-form" %>
+        </div>
+      
     
-    <%= form.text_area :content, :class => "form-control mt-5 " %>
+    </div>
   </div>
+  
 
-  <div class="actions float-right">
-    <%= form.submit "Twittear", :class => "btn btn-info p-2 " %>
-  </div>
+ 
 <% end %>

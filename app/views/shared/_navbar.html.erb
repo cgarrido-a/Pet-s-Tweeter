@@ -8,34 +8,49 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="collapse navbar-collapse menu" id="navbarNavAltMarkup">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item mr-2">
+      
+        <% if user_signed_in? %>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle mr-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= image_tag(current_user.avatar, class: 'rounded-circle avatar-nav mr-3') %>@<%= current_user.username %>
+              </a>
+              <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+                <a href = "<%= edit_user_registration_path %>" class = "nav-link">Edit User</a>
+                <% if current_user.admin %>
+                  <%= link_to 'Admin', admin_root_path, class: "nav-link " %>
+                <% end %>
+                <div class="dropdown-divider"></div>
+                  <%= link_to 'Sign Out', destroy_user_session_path, class: "nav-link" %>
+              </div>   
+            </li>
+
+        <% else%>
+
+            <li class="nav-item mr-3">
+              <%= link_to 'Sign Up', new_user_registration_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item mr-3">
+              <%= link_to 'Login', new_user_session_path, class: "nav-link" %>
+            </li>
+
+        <% end %>
+        
+        <li class="nav-item mr-3">
           <%= link_to 'Explore',all_tweets_path, class: "nav-link" %>
         </li>
-        <% if user_signed_in? %>
-          <% if current_user.admin %>
-            <li class="nav-item mr-2">
-              <%= link_to 'Admin', admin_root_path, class: "nav-link " %>
-            </li>
-          <% end %>
-          <li class="nav-item mr-2">
-            
-            <strong><a href = "<%= edit_user_registration_path %>" class = "nav-link">@<%= current_user.username %></a></strong>
-          </li>
-          <li class="nav-item mr-2">        
-            <%= link_to 'Sign Out', destroy_user_session_path, class: "nav-link" %>
-          </li>
-        <% else%>
-          <li class="nav-item mr-2">
-            <%= link_to 'Sign Up', new_user_registration_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to 'Login', new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
+        
+        <li class="nav-item">
+          <a class = "nav-link" href="#exampleModalCenter" data-toggle="modal" data-target="#exampleModalCenter">Search</a>
+        </li>
+        
       </ul>
+      
     </div>
     
   </div>
 </nav>
+
+<%= render 'shared/search', tweet: @tweet %>

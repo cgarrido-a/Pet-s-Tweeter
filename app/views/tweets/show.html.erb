@@ -2,22 +2,25 @@
 
   <p id="notice"><%= notice %></p>
 
-  <div class="bg-light p-4 single-tweet tweet-show">
-    <h3><strong> <%= @tweet.user.username %> dice:</strong></h3>
-    <em>"<%= @tweet.content %>"</em>
-
-    <h3 class="mt-5"><i class="fas fa-paw text-danger"></i> Likes (<%= @tweet.likes.count %>)</h3>
-    <% @tweet.liking_users.each do |user| %>
-      <%= image_tag(user.avatar, class: 'avatar-in-tweet avatar-show') %>
-    <% end %>
-
+  <div class="container bg-light single-tweet tweet-show mb-3">
+    <div class="row mb-5  ">
+      <%= image_tag(@tweet.user.avatar, class: 'img-thumbnail avatar-show m-3 ') %>
+      <div class="mt-3">
+        <h3 class="d-inline "><strong> <%= @tweet.user.username %> dice:</strong></h3>
+        <p class="p-show"><em>"<%= @tweet.content %>"</em></p>
+      </div>
+      
+    </div>
     
-
+    <h3 class=""><i class="fas fa-paw text-danger"></i> Liked by: (<%= @tweet.likes.count %>)</h3>
+    <% @tweet.liking_users.each do |user| %>
+      <%= image_tag(user.avatar, class: 'avatar-likes-show mb-2') %>
+    <% end %>
+    
   </div>
+  
     
   <%= link_to 'Back', root_path %>
-  
-
   
 
 </div>

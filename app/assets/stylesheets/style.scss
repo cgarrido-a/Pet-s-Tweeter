@@ -1,12 +1,21 @@
 .avatar-in-tweet{
-    width: 100px;
-    height: 95px;
+    width: 120px;
+    height: 105px;
 }
 
-.avatar-show{
+.avatar-likes-show{
     border-radius: 5px 30px 5px;
     width: 50px;
     height: 50px;
+}
+
+.avatar-nav{
+    width: 30px;
+}
+
+.avatar-show{
+    width: 120px;
+    height: 105px;
 }
 
 html, body {
@@ -31,6 +40,11 @@ body {
     background-color: #DA723C;
 }
 
+.btn-form{
+    font-family: 'Architects Daughter', cursive;
+   font-size: 1.3em !important;
+}
+
 .content-style{
     font-family: 'Alegreya', serif;
     font-size: 1.5em;
@@ -45,6 +59,20 @@ body {
     font-size: 0.8em;
 }
 
+.dropdown-menu{
+    background-color:#DA723C !important;
+}
+
+.edit-label, .p-show{
+    font-family: 'Alegreya', serif;
+    font-size: 0.8em;
+}
+
+.edit-user{
+    margin: auto;
+    width: 60%;
+}
+
 .font-alert{
     font-size: 1.5em;
     width: 50%;
@@ -57,12 +85,13 @@ body {
      position: relative;
  }
 
- header{
+ .modal-header{
     background-color:#DA723C;
  }
 
-.img-header{
-    width: 20rem;
+
+.img-inicio{
+    width: 10rem;
 }
 
  .links-color{
@@ -73,9 +102,6 @@ body {
     background-color: #FFEBC9;
 }
 
-.modal-header{
-    background-color:#DA723C;
-}
 
 .modal-btn{
     margin-left: 25rem;
@@ -86,9 +112,13 @@ body {
     font-family: 'Indie Flower', 'sans serif';
 }
 .nav-style{
-    font-size: 2em;
+    font-size: 1.5em;
+ }
 
-}
+ .new-tweet-title,  .user-says, .form-style, .tweets-list, .retweet, .tweet-show{
+     color: #268a7e;
+     font-family: 'Architects Daughter', cursive;
+ }
 
 .retweet{
     font-size: 0.7em;
@@ -106,6 +136,10 @@ body {
     
 }
 
+table{
+ margin-bottom: 20px !important;
+}
+
 .text-info{
     font-size: 0.8em ;
 }
@@ -117,14 +151,6 @@ body {
 .user-says{
     font-weight: 700;
 }
-
-
-
-
-
-
-
-
 
 
 
